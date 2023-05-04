@@ -1,12 +1,11 @@
 from typing import Any
-from .nodes import Node
+from .nodes import ListNode
 
 
 class LinkedList:
     def __init__(self):
         """
         Create and initialize LinkedList class instance.
-        >>> linked_list = LinkedList()
         """
         self.head = None
 
@@ -29,17 +28,19 @@ class LinkedList:
         """
         String representation/visualization of a Linked Lists.
         """
-        return " -> ".join([f'[{item}]' for item in self])
+        return " -> ".join([str(item) for item in self])
 
     def __getitem__(self, index: int) -> Any:
         """
         Indexing Support. Used to get a node at particular position.
         """
         if not 0 <= index < len(self):
-            raise ValueError("list index out of range.")
+            raise IndexError("List index out of range.")
+
         for i, node in enumerate(self):
             if i == index:
                 return node
+
         return None
 
     def __setitem__(self, index: int, data: Any) -> None:
@@ -47,10 +48,12 @@ class LinkedList:
         Set the value at a specific index.
         """
         if not 0 <= index < len(self):
-            raise ValueError("List index out of range.")
+            raise IndexError("List index out of range.")
+
         current = self.head
         for _ in range(index):
             current = current.next
+
         current.data = data
 
     def insert_tail(self, data: Any) -> None:
@@ -70,8 +73,9 @@ class LinkedList:
         Insert data at given index.
         """
         if not 0 <= index <= len(self):
-            raise IndexError("list index out of range")
-        new_node = Node(data)
+            raise IndexError("List index out of range.")
+
+        new_node = ListNode(data)
         if self.head is None:
             self.head = new_node
         elif index == 0:
@@ -81,6 +85,7 @@ class LinkedList:
             temp = self.head
             for _ in range(index - 1):
                 temp = temp.next
+
             new_node.next = temp.next
             temp.next = new_node
 
@@ -108,6 +113,7 @@ class LinkedList:
         """
         if not 0 <= index <= len(self) - 1:  # test if index is valid
             raise IndexError("List index out of range.")
+
         delete_node = self.head  # default first node
         if index == 0:
             self.head = self.head.next
@@ -117,6 +123,7 @@ class LinkedList:
                 temp = temp.next
             delete_node = temp.next
             temp.next = temp.next.next
+
         return delete_node.data
 
     def is_empty(self) -> bool:
@@ -133,15 +140,10 @@ class LinkedList:
         current = self.head
 
         while current:
-            # Store the current node's next node.
             next_node = current.next
-            # Make the current node's next point backwards
             current.next = prev
-            # Make the previous node be the current node
-            prev = current
-            # Make the current node the next node (to progress iteration)
-            current = next_node
-        # Return prev in order to put the head at the end
+            prev, current = current, next_node
+
         self.head = prev
 
 
@@ -180,7 +182,7 @@ class DoublyLinkedList:
         if not 0 <= index <= length:
             raise IndexError("List index out of range")
 
-        new_node = Node(data)
+        new_node = ListNode(data)
         if self.head is None:
             self.head = self.tail = new_node
         elif index == 0:
