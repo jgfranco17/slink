@@ -56,13 +56,13 @@ class LinkedList:
 
         current.data = data
 
-    def insert_tail(self, data: Any) -> None:
+    def add(self, data: Any) -> None:
         """
-        Insert data to the end of linked list.
+        Append data to the end of linked list.
         """
         self.insert_nth(len(self), data)
 
-    def insert_head(self, data: Any) -> None:
+    def insert(self, data: Any) -> None:
         """
         Insert data to the beginning of linked list.
         """
@@ -89,7 +89,7 @@ class LinkedList:
             new_node.next = temp.next
             temp.next = new_node
 
-    def print_list(self) -> None:  # print every node data
+    def display(self) -> None:  # print every node data
         """
         This method prints every node data.
         """
