@@ -5,7 +5,6 @@ class HashTable:
     """
     Basic Hash Table example with open addressing and linear probing
     """
-
     def __init__(self, size: int, charge_factor: int | None = None, lim_charge: float | None = None):
         self.size = size
         self.values = [None] * self.size
