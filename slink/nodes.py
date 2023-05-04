@@ -1,10 +1,10 @@
 from typing import Any
 
 
-class Node:
+class ListNode:
     def __init__(self, data: Any):
         """
-        Create and initialize Node class instance.
+        Create and initialize ListNode class instance.
         """
         self.data = data
         self.next = None
@@ -13,7 +13,7 @@ class Node:
         """
         Get the string representation of this node.
         """
-        return f"Node({self.data})"
+        return f"ListNode({self.data})"
 
     @property
     def address(self):
