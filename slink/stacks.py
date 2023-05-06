@@ -24,7 +24,7 @@ class Stack:
         return f'<Stack at {hex(id(self))}, limit={self.__limit}'
 
     def __str__(self) -> str:
-        items = " ".join(self.stack)
+        items = " ".join(str(self.__stack))
         return f'[{items}]'
 
     @property
