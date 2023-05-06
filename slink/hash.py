@@ -1,6 +1,6 @@
-from dataclasses import dataclass
-from collections.abc import Iterator, MutableMapping
 from typing import Generic, TypeVar
+from collections.abc import Iterator, MutableMapping
+from pydantic.dataclasses import dataclass
 from .utils import next_prime
 
 
