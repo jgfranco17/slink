@@ -1,5 +1,5 @@
 from typing import Any
-from structexceptions import StackUnderflowError, StackOverflowError
+from .structexceptions import StackUnderflowError, StackOverflowError
 
 
 class Stack:
@@ -48,12 +48,16 @@ class Stack:
         """
         return len(self.__stack)
 
+    @property
+    def limit(self) -> int:
+        return self.__limit
+
     def push(self, data: Any) -> None:
         """
         Push an element to the top of the stack.
         """
         if len(self.__stack) >= self.__limit:
-            raise StackOverflowError
+            raise StackOverflowError(f'Stack has limit of {self.__limit}.')
 
         self.__stack.append(data)
 
@@ -62,7 +66,7 @@ class Stack:
         Pop an element off of the top of the stack.
         """
         if not self.__stack:
-            raise StackUnderflowError
+            raise StackUnderflowError(f'Cannot pop from empty stack.')
 
         return self.__stack.pop()
 
