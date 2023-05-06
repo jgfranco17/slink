@@ -1,14 +1,14 @@
 from typing import Any
 
 
-class TreeNode:
+class BinaryTree:
     """
-    A TreeNode has data variable and pointers to Nodes to its left and right.
+    A BinaryTree has data variable and pointers to Nodes to its left and right.
     """
     def __init__(self, data: Any) -> None:
         self.data = data
-        self.left: TreeNode | None = None
-        self.right: TreeNode | None = None
+        self.left: BinaryTree | None = None
+        self.right: BinaryTree | None = None
         
     def depth(self):
         """
