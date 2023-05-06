@@ -1,7 +1,7 @@
 import pytest
 from slink.stacks import Stack
-from slink.nodes import ListNode
 from slink.lists import LinkedList, DoublyLinkedList
+from slink.hash import HashMap, HashTable
 
 
 @pytest.fixture
@@ -35,3 +35,15 @@ def doubly_non_empty_list():
     dlist.insert_at_head(2)
     dlist.insert_at_head(3)
     return dlist
+
+
+@pytest.fixture
+def simple_hashtable():
+    hashtable = HashTable(5)
+    return hashtable
+
+
+@pytest.fixture
+def base_hashmap():
+    hashmap = HashMap()
+    return hashmap
