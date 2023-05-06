@@ -4,7 +4,7 @@ from .structexceptions import StackUnderflowError, StackOverflowError
 
 class Stack:
     """
-    A stack is an abstract data type that serves as a collection of elements with 
+    A stack is an abstract data type that serves as a collection of elements with
     two principal operations: 'push' and 'pop'. Pushing adds an element to the top
     of the stack, and popping removes an element from the top of a stack. The order
     in which elements come off of a stack are Last In First Out (LIFO).
