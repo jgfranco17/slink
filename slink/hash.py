@@ -8,7 +8,7 @@ KEY = TypeVar("KEY")
 VAL = TypeVar("VAL")
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass
 class _Item(Generic[KEY, VAL]):
     key: KEY
     val: VAL
@@ -30,7 +30,7 @@ class HashMap(MutableMapping[KEY, VAL]):
     Hash map with open addressing.
     """
     def __init__(self, initial_block_size: int = 8, capacity_factor: float = 0.75) -> None:
-        if 0.0 < capacity_factor < 1.0:
+        if not 0.0 < capacity_factor < 1.0:
             raise ValueError("Capacity factor must be a float from 0 to 1.")
 
         self._initial_block_size = initial_block_size
