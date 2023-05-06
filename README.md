@@ -35,19 +35,15 @@ It is highly recommended to use `pyenv` to manage Python versions. This project 
 To use Slink in your Python programs, simply import the desired data structure and create an instance of it:
 
 ```python
-from slink import LinkedList
+from slink.lists import LinkedList
 
 # create a new singly linked list
-lst = LinkedList()
+my_list = LinkedList()
 
 # add elements to the list
-lst.add(1)
-lst.add(2)
-lst.add(3)
-
-# print the contents of the list
-for element in lst:
-    print(element)
+my_list.add(1)
+my_list.add(2)
+my_list.add(3)
 ```
 
 Slink's data structures all have similar interfaces, making it easy to switch between them as needed. The package also includes detailed documentation and examples for each data structure.
