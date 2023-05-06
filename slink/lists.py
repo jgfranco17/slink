@@ -126,6 +126,7 @@ class LinkedList:
 
         return delete_node.data
 
+    @property
     def is_empty(self) -> bool:
         """
         Check if linked list is empty.
