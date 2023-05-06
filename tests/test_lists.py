@@ -5,6 +5,7 @@ from slink.lists import LinkedList, DoublyLinkedList
 
 def test_linked_list_init():
     llist = LinkedList()
+    assert isinstance(llist, LinkedList)
     assert llist.head is None
 
 
