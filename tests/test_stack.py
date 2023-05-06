@@ -23,15 +23,15 @@ def test_stack_push(base_stack):
     assert base_stack.peek() == 2
 
 
-def test_stack_underflow(sample_stack):
+def test_stack_underflow(base_stack):
     with pytest.raises(StackUnderflowError):
-        _ = sample_stack.pop()
+        _ = base_stack.pop()
 
 
-def test_stack_overflow(sample_stack):
+def test_stack_overflow(base_stack):
     with pytest.raises(StackOverflowError):
-        for value in range(sample_stack.limit + 1):
-            sample_stack.push(value)
+        for value in range(base_stack.limit + 1):
+            base_stack.push(value)
 
 
 def test_stack_pop(base_stack):
