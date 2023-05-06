@@ -29,16 +29,16 @@ show:             ## Show the current environment.
 
 .PHONY: format
 format:              ## Format code using black & isort.
-	$(ENV_PREFIX)isort stockpyle/
-	$(ENV_PREFIX)black -l 79 stockpyle/
+	$(ENV_PREFIX)isort slink/
+	$(ENV_PREFIX)black -l 79 slink/
 	$(ENV_PREFIX)black -l 79 tests/
 
 .PHONY: lint
 lint:  ## Run pep8, black, mypy linters.
-	$(ENV_PREFIX)pylint stockpyle/
-	$(ENV_PREFIX)flake8 stockpyle/
-	$(ENV_PREFIX)black -l 80 --check stockpyle/
-	$(ENV_PREFIX)mypy --ignore-missing-imports stockpyle/
+	$(ENV_PREFIX)pylint slink/
+	$(ENV_PREFIX)flake8 slink/
+	$(ENV_PREFIX)black -l 80 --check slink/
+	$(ENV_PREFIX)mypy --ignore-missing-imports slink/
 
 .PHONY: test
 test:  ## Run PyTest unit tests.
