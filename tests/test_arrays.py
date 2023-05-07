@@ -3,7 +3,7 @@ from slink.arrays import Array
 from .conftest import empty_array, simple_array
 
 
-def test_array_set_item(simple_array):
+def test_array_str(simple_array):
     simple_array[0] = 1
     simple_array[1] = 2
     simple_array[2] = 3
