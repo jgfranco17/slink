@@ -1,9 +1,10 @@
-# Welcome to Slink docs!
+# About Slink
+
+Slink is a Python library for implementing classic data structures that provides a clean, reusable, and object-oriented implementation of these data structures. It is built entirely in Python and uses OOP principles to provide a simple and intuitive interface for working with data structures. 
 
 ### Why "Slink"?
 
 For this project, the term "Slink" was selected for a number of reasons. First off, the name is a play on "link," a term used frequently in computer science to denote a link between two items. For a library that focuses on implementing traditional data structures, many of which require links or connections between items, this is very important. Second, the word "slink" implies sleekness, speed, and agility, all of which are desirable characteristics in a software library. By selecting this name, we intend to imply that Slink is a quick, effective, and adaptable data structure implementation library. Finally, "Slink" is a short, memorable, and catchy name that is simple to recall and recognize. Any software library should take into account this since it promotes brand recognition and increases developer adoption.
-
 
 ### Motivation
 Data structures are an essential part of computer science and software engineering. They are used to store and organize data efficiently and provide fast access and manipulation of data. A solid understanding of data structures is crucial for building efficient algorithms and scalable software systems. Oftentimes, these data structures and algorithms are used when preparing for programming interviews. However, implementing data structures from scratch can be time-consuming and error-prone. This is where Slink comes in - it provides a pre-built implementation of popular data structures, allowing developers to focus on solving the problem at hand rather than the underlying data structures.
