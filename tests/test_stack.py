@@ -69,4 +69,4 @@ def test_stack_len(base_stack):
 def test_stack_str(base_stack):
     base_stack.push(1)
     base_stack.push(2)
-    assert str(base_stack) == '[1 2]'
+    assert str(base_stack) == "[1|2]"
