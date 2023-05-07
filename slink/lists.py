@@ -3,10 +3,12 @@ from .nodes import ListNode
 
 
 class LinkedList:
+    """
+    A linked list is a data structure that consists of a sequence of nodes,
+    each containing an element and a reference to the next node in the list.
+    In singly linked lists, each node has a reference to the next node.
+    """
     def __init__(self):
-        """
-        Create and initialize LinkedList class instance.
-        """
         self.head = None
 
     def __iter__(self) -> Any:
