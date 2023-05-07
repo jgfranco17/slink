@@ -1,4 +1,4 @@
-# Linked Lists
+# Queue
 
 ## Overview
 A queue is a collection of elements that can be accessed according to the First-In-First-Out (FIFO) principle, where the first element added to the queue is the first to be removed.

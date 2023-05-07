@@ -1,4 +1,4 @@
-# Linked Lists
+# Trees
 
 ## Overview
 A tree is a collection of nodes connected by edges, with a designated root node at the top. Each node can have any number of child nodes, and the nodes are often organized into levels.
