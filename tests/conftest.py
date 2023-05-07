@@ -78,7 +78,7 @@ def basic_tree():
 
 @pytest.fixture
 def graph_nodes():
-    node_data = [GraphNode(data) for data in "ABCDEF".split()]
+    node_data = [GraphNode(letter) for letter in "ABCDEF"]
     return node_data
 
 
