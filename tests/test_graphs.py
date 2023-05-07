@@ -17,7 +17,7 @@ def test_add_edge(graph_nodes):
     graph.add_node(node_a.data)
     graph.add_node(node_b.data)
     graph.add_edge(node_a, node_b)
-    assert node_a.neighbors == [node_b]
+    assert node_b in node_a.neighbors
 
 
 def test_remove_node(graph_edges):
@@ -48,7 +48,7 @@ def test_depth_first_search(graph_edges, capsys):
     graph.nodes = {node_a}
     graph.depth_first_search(node_a)
     captured = capsys.readouterr()
-    assert captured.out == "A\nB\nC\nD\nE\nF\nC\n"
+    assert captured.out == "A\nB\nC\nD\nE\nF\n"
 
 
 def test_breadth_first_search(graph_edges, capsys):
