@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
 """
-    module to operations with prime numbers
+Helper module for miscellaneous calculations.
 """
 
 import math
