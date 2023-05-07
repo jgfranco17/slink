@@ -32,6 +32,15 @@ class Array:
         return f'[{items}]'
 
     def resize(self, size: int) -> None:
+        """
+        Change the fixed size of the array.
+
+        Args:
+            size (int): new size of array
+
+        Raises:
+            TypeError: 'size' argument must be an integer
+        """
         if not isinstance(size, int):
             raise TypeError(f'Expected input of type int but got {type(size)}')
 
@@ -42,6 +51,17 @@ class Array:
         self.__size = size
 
     def insert(self, index: int, value: Any) -> None:
+        """
+        Insert data into a specified index.
+
+        Args:
+            index (int): array location to insert into
+            value (Any): data to insert
+
+        Raises:
+            TypeError: index must be integer
+            IndexError: index must be within size
+        """   
         if not isinstance(index, int):
             raise TypeError(f'Expected input of type int but got {type(index)}')
 
@@ -54,6 +74,15 @@ class Array:
         self.__data[index] = value
 
     def remove(self, value: Any) -> None:
+        """
+        Remove data from the array.
+
+        Args:
+            value (Any): data to remove
+
+        Raises:
+            ValueError: specified value does not exist in array
+        """
         for i in range(self.__size):
             if self.__data[i] == value:
                 self.__data[i] = None
@@ -84,5 +113,11 @@ class Array:
         self.__quicksort(0, len(self) - 1)
 
     def to_list(self) -> list:
+        """
+        Generate a list-format version of the array
+
+        Returns:
+            list: list form of array
+        """
         items = [data for data in self]
         return items
