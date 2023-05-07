@@ -1,5 +1,7 @@
 import pytest
+from slink.nodes import TreeNode
 from slink.stacks import Stack
+from slink.trees import BinaryTree
 from slink.lists import LinkedList, DoublyLinkedList
 from slink.hash import HashMap, HashTable
 
@@ -47,3 +49,27 @@ def simple_hashtable():
 def base_hashmap():
     hashmap = HashMap()
     return hashmap
+
+
+@pytest.fixture
+def empty_tree_node():
+    empty_node = TreeNode(None)
+    return empty_node
+
+
+@pytest.fixture
+def simple_tree_node():
+    node = TreeNode(5)
+    return node
+
+
+@pytest.fixture
+def basic_tree():
+    node = TreeNode(1)
+    node.left = TreeNode(2)
+    node.left.left = TreeNode(4)
+    node.right = TreeNode(3)
+    node.right.left = TreeNode(5)
+    node.right.left.left = TreeNode(6)
+    tree = BinaryTree(node)
+    return tree
