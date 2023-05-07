@@ -1,10 +1,21 @@
 import pytest
 from slink.nodes import TreeNode
+from slink.arrays import Array
 from slink.stacks import Stack
 from slink.trees import BinaryTree
 from slink.lists import LinkedList, DoublyLinkedList
 from slink.graphs import Graph, GraphNode
 from slink.hash import HashMap, HashTable
+
+
+@pytest.fixture
+def empty_array():
+    return Array(0)
+
+
+@pytest.fixture
+def simple_array():
+    return Array(5)
 
 
 @pytest.fixture
