@@ -13,3 +13,12 @@ class ListNode:
     def address(self):
         return hex(id(self))
 
+
+class TreeNode:
+    def __init__(self, data: Any) -> None:
+        self.data = data
+        self.left: TreeNode | None = None
+        self.right: TreeNode | None = None
+
+    def __bool__(self):
+        return self.data is not None
