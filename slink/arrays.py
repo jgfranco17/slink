@@ -31,7 +31,7 @@ class Array:
         items = " ".join(list(map(str, self.__data)))
         return f'[{items}]'
 
-    def resize(self, size: int):
+    def resize(self, size: int) -> None:
         if not isinstance(size, int):
             raise TypeError(f'Expected input of type int but got {type(size)}')
 
@@ -41,7 +41,7 @@ class Array:
             self.__data += [None] * (size - self.__size)
         self.__size = size
 
-    def insert(self, index: int, value: Any):
+    def insert(self, index: int, value: Any) -> None:
         if not isinstance(index, int):
             raise TypeError(f'Expected input of type int but got {type(index)}')
 
@@ -53,7 +53,7 @@ class Array:
             self.__data[i] = self.__data[i-1]
         self.__data[index] = value
 
-    def remove(self, value: Any):
+    def remove(self, value: Any) -> None:
         for i in range(self.__size):
             if self.__data[i] == value:
                 self.__data[i] = None
@@ -80,5 +80,9 @@ class Array:
             self.__quicksort(low, pi - 1)
             self.__quicksort(pi + 1, high)
 
-    def sort(self):
+    def sort(self) -> None:
         self.__quicksort(0, len(self) - 1)
+
+    def to_list(self) -> list:
+        items = [data for data in self]
+        return items
