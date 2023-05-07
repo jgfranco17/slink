@@ -61,6 +61,15 @@ class LinkedList:
 
         current.data = data
 
+    def __contains__(self, value: Any) -> bool:
+        is_value_in_list = False
+        for node in self:
+            if node.data == value:
+                is_value_in_list = True
+                break
+
+        return is_value_in_list
+
     def add(self, data: Any) -> None:
         """
         Append data to the end of linked list.
