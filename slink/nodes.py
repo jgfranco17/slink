@@ -31,6 +31,9 @@ class GraphNode:
 
     def __repr__(self) -> str:
         return f'<GraphNode at {hex(id(self))}, data={self.data}>'
+    
+    def __eq__(self, other) -> bool:
+        return self.data == other.data
 
     def add_neighbor(self, neighbor):
         """
