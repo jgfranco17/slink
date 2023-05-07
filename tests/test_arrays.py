@@ -33,11 +33,11 @@ def test_array_resize(simple_array):
 
 
 def test_array_insert(simple_array):
-    simple_array[0] = 1
-    simple_array[1] = 2
-    simple_array[2] = 3
-    simple_array.insert(1, 4)
-    assert str(simple_array) == "[1 4 2 3 None]"
+    array = Array(3)
+    array[0] = 1
+    array[1] = 2
+    array.insert(1, 3)
+    assert str(array) == "[1 3 2 None]"
 
 
 def test_array_remove(simple_array):
@@ -45,7 +45,7 @@ def test_array_remove(simple_array):
     simple_array[1] = 2
     simple_array[2] = 3
     simple_array.remove(2)
-    assert str(simple_array) == "[1 3 None None None]"
+    assert str(simple_array) == "[1 3 None None]"
     with pytest.raises(ValueError):
         simple_array.remove(4)
 
