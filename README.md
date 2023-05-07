@@ -21,9 +21,9 @@
 
 ### Overview
 
-Slink is a Python package library for classic data structures such as linked lists, trees, hash tables, queues, and stacks. These data structures are essential components in computer science, used to store, manage, and manipulate data efficiently. Slink provides a clean, reusable, and object-oriented interface for these data structures, making it easy to integrate them into your Python programs. We hope that Slink serves as a valuable resource for your Python programming needs!
+Slink is a Python package library for [classic data structures](https://www.geeksforgeeks.org/data-structures/). These data structures are essential components in computer science, used to store, manage, and manipulate data efficiently. Slink provides a clean, reusable, and object-oriented interface for these data structures, making it easy to integrate them into your Python programs. We hope that Slink serves as a valuable resource for your Python programming needs!
 
-We welcome contributions from the open source community. If you find a bug or have a feature request, please open an issue on the GitHub repository. If you'd like to contribute code, please fork the repository and submit a pull request with your changes. Slink follows the Python Software Foundation's code of conduct and encourages contributions from all members of the community. Before contributing, please review the contribution guidelines and code of conduct to ensure that your contributions are in line with our standards and values.
+We welcome contributions from the open source community. If you find a bug or have a feature request, please open an issue on the GitHub repository. If you'd like to contribute code, please fork the repository and submit a [pull request](.github/PULL_REQUEST_TEMPLATE.md) with your changes. Slink follows the Python Software Foundation's [code of conduct](https://www.python.org/psf/conduct/) and encourages contributions from all members of the community. Before contributing, please review the contribution guidelines and code of conduct to ensure that your contributions are in line with our standards and values.
 
 ### Motivation
 Data structures are an essential part of computer science and software engineering. They are used to store and organize data efficiently and provide fast access and manipulation of data. A solid understanding of data structures is crucial for building efficient algorithms and scalable software systems. Oftentimes, these data structures and algorithms are used when preparing for programming interviews. However, implementing data structures from scratch can be time-consuming and error-prone. This is where Slink comes in - it provides a pre-built implementation of popular data structures, allowing developers to focus on solving the problem at hand rather than the underlying data structures.
@@ -66,7 +66,7 @@ my_list.add(2)
 my_list.add(3)
 ```
 
-Slink's data structures all have similar interfaces, making it easy to switch between them as needed. The package also includes detailed documentation and examples for each data structure.
+The Slink repository also includes detailed documentation and examples for each data structure. Please check the [documentation directory](https://github.com/jgfranco17/slink/tree/main/docs) for further references.
 
 ## Testing <a name = "testing"></a>
 
