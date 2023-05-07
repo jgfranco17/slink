@@ -57,13 +57,16 @@ To use Slink in your Python programs, simply import the desired data structure a
 ```python
 from slink.lists import LinkedList
 
-# create a new singly linked list
+# Create a new singly linked list
 my_list = LinkedList()
 
-# add elements to the list
+# Add elements to the list
 my_list.add(1)
 my_list.add(2)
 my_list.add(3)
+
+# Print out the linked list
+my_list.display()
 ```
 
 The Slink repository also includes detailed documentation and examples for each data structure. Please check the [documentation directory](https://github.com/jgfranco17/slink/tree/main/docs) for further references.
