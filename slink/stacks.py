@@ -9,7 +9,6 @@ class Stack:
     of the stack, and popping removes an element from the top of a stack. The order
     in which elements come off of a stack are Last In First Out (LIFO).
     """
-
     def __init__(self, limit: int = 10):
         self.__stack: list[Any] = []
         self.__limit = limit
@@ -21,7 +20,7 @@ class Stack:
         return len(self.__stack)
 
     def __repr__(self) -> str:
-        return f'<Stack at {hex(id(self))}, limit={self.__limit}'
+        return f'<Stack at {hex(id(self))}, limit={self.__limit}>'
 
     def __str__(self) -> str:
         items = " ".join(list(map(str, self.__stack)))
