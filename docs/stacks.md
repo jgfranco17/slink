@@ -9,9 +9,9 @@ A stack is a collection of elements that can be accessed according to the Last-I
 - **No random access:** Elements in a stack cannot be accessed by their index, but only by adding or removing elements from the top of the stack.
 
 ## Operations
-- **Push:** Add a new element to the top of the stack. O(1) time complexity.
-- **Pop:** Remove the element at the top of the stack. O(1) time complexity.
-- **Peek:** Get the value of the element at the top of the stack without removing it. O(1) time complexity.
+- **Push:** Add a new element to the top of the stack.
+- **Pop:** Remove the element at the top of the stack.
+- **Peek:** Get the value of the element at the top of the stack without removing it.
 
 ## Complexity Analysis
 | **Operation** | **Best Case** | **Worst Case** | **Average Case** |
