@@ -5,7 +5,7 @@
 <div align="center">
 <br />
 
-![STATUS](https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge) ![LICENSE](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![STATUS](https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge) ![LICENSE](https://img.shields.io/badge/license-BSD3Clause-blue?style=for-the-badge)
 
 </div>
 
