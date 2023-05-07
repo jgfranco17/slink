@@ -3,6 +3,7 @@ from slink.nodes import TreeNode
 from slink.stacks import Stack
 from slink.trees import BinaryTree
 from slink.lists import LinkedList, DoublyLinkedList
+from slink.graphs import Graph, GraphNode
 from slink.hash import HashMap, HashTable
 
 
@@ -73,3 +74,26 @@ def basic_tree():
     node.right.left.left = TreeNode(6)
     tree = BinaryTree(node)
     return tree
+
+
+@pytest.fixture
+def graph_nodes():
+    node_a = GraphNode('A')
+    node_b = GraphNode('B')
+    node_c = GraphNode('C')
+    node_d = GraphNode('D')
+    node_e = GraphNode('E')
+    node_f = GraphNode('F')
+    return node_a, node_b, node_c, node_d, node_e, node_f
+
+
+@pytest.fixture
+def graph_edges(graph_nodes):
+    node_a, node_b, node_c, node_d, node_e, node_f = graph_nodes
+    node_a.add_neighbor(node_b)
+    node_b.add_neighbor(node_c)
+    node_c.add_neighbor(node_d)
+    node_c.add_neighbor(node_e)
+    node_e.add_neighbor(node_f)
+    node_f.add_neighbor(node_c)
+    return node_a, node_b, node_c, node_d, node_e, node_f
