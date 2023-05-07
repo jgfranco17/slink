@@ -78,13 +78,8 @@ def basic_tree():
 
 @pytest.fixture
 def graph_nodes():
-    node_a = GraphNode('A')
-    node_b = GraphNode('B')
-    node_c = GraphNode('C')
-    node_d = GraphNode('D')
-    node_e = GraphNode('E')
-    node_f = GraphNode('F')
-    return node_a, node_b, node_c, node_d, node_e, node_f
+    node_data = [GraphNode(data) for data in "ABCDEF".split()]
+    return node_data
 
 
 @pytest.fixture
