@@ -25,14 +25,6 @@ Slink is a Python package library for [classic data structures](https://www.geek
 
 We welcome contributions from the open source community. If you find a bug or have a feature request, please open an issue on the GitHub repository. If you'd like to contribute code, please fork the repository and submit a [pull request](.github/PULL_REQUEST_TEMPLATE.md) with your changes. Slink follows the Python Software Foundation's [code of conduct](https://www.python.org/psf/conduct/) and encourages contributions from all members of the community. Before contributing, please review the contribution guidelines and code of conduct to ensure that your contributions are in line with our standards and values.
 
-### Motivation
-Data structures are an essential part of computer science and software engineering. They are used to store and organize data efficiently and provide fast access and manipulation of data. A solid understanding of data structures is crucial for building efficient algorithms and scalable software systems. Oftentimes, these data structures and algorithms are used when preparing for programming interviews. However, implementing data structures from scratch can be time-consuming and error-prone. This is where Slink comes in - it provides a pre-built implementation of popular data structures, allowing developers to focus on solving the problem at hand rather than the underlying data structures.
-
-### Technologies Used
-Slink is built entirely in Python, a popular general-purpose programming language known for its simplicity, readability, and versatility. The library uses object-oriented programming (OOP) principles to provide a clean and reusable implementation of data structures.
-
-All data structures are implemented as classes, with methods for common operations such as insertion, deletion, and traversal. In addition, Slink includes a set of common algorithms for working with graphs, such as breadth-first and depth-first traversal.
-
 ## Prerequisites <a name="prerequisites"></a>
 The following must be installed on the host machine:
 
