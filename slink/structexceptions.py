@@ -7,3 +7,7 @@ class StackOverflowError(BaseException):
 
 class StackUnderflowError(BaseException):
     pass
+
+
+class NullReferenceError(BaseException):
+    pass
