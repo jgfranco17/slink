@@ -8,17 +8,17 @@ from slink.hash import HashMap, HashTable
 
 
 @pytest.fixture
-def base_stack():
+def base_stack() -> Stack:
     return Stack()
 
 
 @pytest.fixture
-def empty_list():
+def empty_list() -> LinkedList:
     return LinkedList()
 
 
 @pytest.fixture
-def non_empty_list():
+def non_empty_list() -> LinkedList:
     llist = LinkedList()
     llist.add(1)
     llist.add(2)
@@ -27,12 +27,12 @@ def non_empty_list():
 
 
 @pytest.fixture
-def doubly_empty_list():
+def doubly_empty_list() -> DoublyLinkedList: 
     return DoublyLinkedList()
 
 
 @pytest.fixture
-def doubly_non_empty_list():
+def doubly_non_empty_list() -> DoublyLinkedList:
     dlist = DoublyLinkedList()
     dlist.insert_at_head(1)
     dlist.insert_at_head(2)
@@ -41,31 +41,31 @@ def doubly_non_empty_list():
 
 
 @pytest.fixture
-def simple_hashtable():
+def simple_hashtable() -> HashTable:
     hashtable = HashTable(5)
     return hashtable
 
 
 @pytest.fixture
-def base_hashmap():
+def base_hashmap() -> HashMap:
     hashmap = HashMap()
     return hashmap
 
 
 @pytest.fixture
-def empty_tree_node():
+def empty_tree_node() -> TreeNode:
     empty_node = TreeNode(None)
     return empty_node
 
 
 @pytest.fixture
-def simple_tree_node():
+def simple_tree_node() -> TreeNode:
     node = TreeNode(5)
     return node
 
 
 @pytest.fixture
-def basic_tree():
+def basic_tree() -> BinaryTree:
     node = TreeNode(1)
     node.left = TreeNode(2)
     node.left.left = TreeNode(4)
@@ -77,13 +77,13 @@ def basic_tree():
 
 
 @pytest.fixture
-def graph_nodes():
-    node_data = [GraphNode(letter) for letter in "ABCDEF"]
+def graph_nodes() -> tuple[GraphNode]:
+    node_data = tuple(GraphNode(letter) for letter in "ABCDEF")
     return node_data
 
 
 @pytest.fixture
-def graph_edges(graph_nodes):
+def graph_edges(graph_nodes) -> tuple[GraphNode]:
     node_a, node_b, node_c, node_d, node_e, node_f = graph_nodes
     node_a.add_neighbor(node_b)
     node_b.add_neighbor(node_c)
