@@ -28,14 +28,17 @@ class LinkedList:
 
     def __repr__(self) -> str:
         """
-        String representation/visualization of a Linked Lists.
+        String representation/visualization of a Linked List.
         """
         return " -> ".join([str(item) for item in self])
 
     def __getitem__(self, index: int) -> Any:
         """
-        Indexing Support. Used to get a node at particular position.
+        Indexing Support, used to get a node at particular position.
         """
+        if not isinstance(index, int):
+            raise ValueError(f'Index must be int but type {type(index)} was given.')
+
         if not 0 <= index < len(self):
             raise IndexError("List index out of range.")
 
