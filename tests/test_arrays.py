@@ -32,7 +32,7 @@ def test_array_resize(simple_array):
     assert len(simple_array) == 3
 
 
-def test_array_insert(simple_array):
+def test_array_insert():
     array = Array(3)
     array[0] = 1
     array[1] = 2
