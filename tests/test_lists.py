@@ -57,21 +57,21 @@ def test_doubly_linked_list_len(doubly_empty_list, doubly_non_empty_list):
 
 
 def test_doubly_linked_list_insert_at_head(doubly_empty_list):
-    doubly_empty_list.insert_at_head(1)
+    doubly_empty_list.insert(1)
     assert len(doubly_empty_list) == 1
     assert doubly_empty_list.head.data == 1
     assert doubly_empty_list.tail.data == 1
 
 
 def test_doubly_linked_list_insert_at_tail(doubly_empty_list):
-    doubly_empty_list.insert_at_tail(1)
+    doubly_empty_list.add(1)
     assert len(doubly_empty_list) == 1
     assert doubly_empty_list.head.data == 1
     assert doubly_empty_list.tail.data == 1
 
 
 def test_doubly_linked_list_insert_at_nth(doubly_empty_list):
-    doubly_empty_list.insert_at_nth(0, 1)
+    doubly_empty_list.insert_nth(0, 1)
     assert len(doubly_empty_list) == 1
     assert doubly_empty_list.head.data == 1
     assert doubly_empty_list.tail.data == 1
@@ -82,5 +82,5 @@ def test_doubly_linked_list_insert_at_nth(doubly_empty_list):
 
 
 def test_doubly_linked_list_is_empty(doubly_empty_list, doubly_non_empty_list):
-    assert doubly_empty_list.is_empty() is True
-    assert doubly_non_empty_list.is_empty() is False
+    assert doubly_empty_list.is_empty is True
+    assert doubly_non_empty_list.is_empty is False
