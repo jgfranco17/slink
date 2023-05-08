@@ -31,6 +31,10 @@ class Array:
         items = " ".join(list(map(str, self.__data)))
         return f'[{items}]'
 
+    @property
+    def size(self):
+        return len(self)
+
     def resize(self, size: int) -> None:
         """
         Change the fixed size of the array.
