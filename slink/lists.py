@@ -162,31 +162,10 @@ class LinkedList:
         self.head = prev
 
 
-class DoublyLinkedList:
+class DoublyLinkedList(LinkedList):
     def __init__(self):
-        self.head = None
+        super().__init__()
         self.tail = None
-
-    def __iter__(self):
-        """
-        For iterators to access and iterate through data inside doubly-linked list.
-        """
-        node = self.head
-        while node:
-            yield node.data
-            node = node.next
-
-    def __str__(self):
-        return "->".join([str(item) for item in self])
-
-    def __len__(self):
-        return sum(1 for _ in self)
-
-    def insert_at_head(self, data):
-        self.insert_at_nth(0, data)
-
-    def insert_at_tail(self, data):
-        self.insert_at_nth(len(self), data)
 
     def insert_at_nth(self, index: int, data):
         """
@@ -216,12 +195,6 @@ class DoublyLinkedList:
             new_node.previous = temp.previous
             new_node.next = temp
             temp.previous = new_node
-
-    def delete_head(self):
-        return self.delete_at_nth(0)
-
-    def delete_tail(self):
-        return self.delete_at_nth(len(self) - 1)
 
     def delete_at_nth(self, index: int):
         """
@@ -269,9 +242,3 @@ class DoublyLinkedList:
             current.previous.next = current.next  # 1 --> 3
             current.next.previous = current.previous  # 1 <--> 3
         return data
-
-    def is_empty(self):
-        """
-        Check if list is empty.
-        """
-        return len(self) == 0
