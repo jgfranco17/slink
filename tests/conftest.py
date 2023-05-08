@@ -45,9 +45,9 @@ def doubly_empty_list() -> DoublyLinkedList:
 @pytest.fixture
 def doubly_non_empty_list() -> DoublyLinkedList:
     dlist = DoublyLinkedList()
-    dlist.insert_at_head(1)
-    dlist.insert_at_head(2)
-    dlist.insert_at_head(3)
+    dlist.insert(1)
+    dlist.insert(2)
+    dlist.insert(3)
     return dlist
 
 
