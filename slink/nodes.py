@@ -1,36 +1,54 @@
 from typing import Any
 
 
-class ListNode:
+class Node:
+    """
+    Base class for node objects.
+    """
     def __init__(self, data: Any):
         self.data = data
-        self.next = None
 
-    def __repr__(self) -> str:
-        return f'<ListNode at {hex(id(self))}, data={self.data}>'
+    def __bool__(self):
+        return self.data is not None
 
     @property
     def address(self):
         return hex(id(self))
 
 
-class TreeNode:
-    def __init__(self, data: Any) -> None:
-        self.data = data
-        self.left: TreeNode | None = None
-        self.right: TreeNode | None = None
+class SinglyLinkedNode(Node):
+    def __init__(self, data: Any):
+        super().__init__(data)
+        self.next: SinglyLinkedNode | None = None
 
-    def __bool__(self):
-        return self.data is not None
+    def __repr__(self) -> str:
+        return f'<SinglyLinkedNode at {self.address}, data={self.data}, type={type(self.data)}>'
+
+
+class DoublyLinkedNode(Node):
+    def __init__(self, data: Any):
+        super().__init__(data)
+        self.next: DoublyLinkedNode | None = None
+        self.previous: DoublyLinkedNode | None = None
+
+    def __repr__(self) -> str:
+        return f'<DoublyLinkedNode at {self.address}, data={self.data}, type={type(self.data)}>'
+
+
+class BinaryTreeNode(Node):
+    def __init__(self, data: Any) -> None:
+        super().__init__(data)
+        self.left: BinaryTreeNode | None = None
+        self.right: BinaryTreeNode | None = None
 
 
 class GraphNode:
     def __init__(self, data: Any) -> None:
-        self.data = data
+        super().__init__(data)
         self.neighbors = []
 
     def __repr__(self) -> str:
-        return f'<GraphNode at {hex(id(self))}, data={self.data}>'
+        return f'<GraphNode at {self.address}, data={self.data}, type={type(self.data)}>'
 
     def add_neighbor(self, neighbor):
         """
