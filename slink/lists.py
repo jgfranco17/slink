@@ -1,4 +1,5 @@
 from typing import Any
+from collections.abc import Iterator
 from .nodes import SinglyLinkedNode, DoublyLinkedNode
 
 
@@ -6,7 +7,6 @@ class LinkedList:
     """
     A linked list is a data structure that consists of a sequence of nodes,
     each containing an element and a reference to the next node in the list.
-    In singly linked lists, each node has a reference to the next node.
     """
     def __init__(self):
         self.head = None
@@ -162,7 +162,7 @@ class LinkedList:
         self.head = prev
 
 
-class DoublyLinkedList(SinglyLinkedNode):
+class DoublyLinkedList(LinkedList):
     def __init__(self):
         self.head = None
         self.tail = None
@@ -241,3 +241,56 @@ class DoublyLinkedList(SinglyLinkedNode):
             current.next.previous = current.previous  # 1 <--> 3
 
         return data
+
+
+class CircularLinkedList(LinkedList):
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def __iter__(self) -> Iterator[Any]:
+        node = self.head
+        while self.head:
+            yield node.data
+            node = node.next
+            if node == self.head:
+                break
+
+    def insert_nth(self, index: int, data: Any) -> None:
+        if index < 0 or index > len(self):
+            raise IndexError("List index out of range.")
+
+        new_node = SinglyLinkedNode(data)
+        if self.head is None:
+            new_node.next = new_node  # first node points itself
+            self.tail = self.head = new_node
+        elif index == 0:  # insert at head
+            new_node.next = self.head
+            self.head = self.tail.next = new_node
+        else:
+            temp = self.head
+            for _ in range(index - 1):
+                temp = temp.next
+            new_node.next = temp.next
+            temp.next = new_node
+            if index == len(self) - 1:  # insert at tail
+                self.tail = new_node
+
+    def delete_nth(self, index: int = 0) -> Any:
+        if not 0 <= index < len(self):
+            raise IndexError("list index out of range.")
+        delete_node = self.head
+        if self.head == self.tail:  # just one node
+            self.head = self.tail = None
+        elif index == 0:  # delete head node
+            self.tail.next = self.tail.next.next
+            self.head = self.head.next
+        else:
+            temp = self.head
+            for _ in range(index - 1):
+                temp = temp.next
+            delete_node = temp.next
+            temp.next = temp.next.next
+            if index == len(self) - 1:  # delete at tail
+                self.tail = temp
+        return delete_node.data
