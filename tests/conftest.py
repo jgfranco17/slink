@@ -1,9 +1,9 @@
 import pytest
-from slink.nodes import TreeNode
+from slink.nodes import BinaryTreeNode
 from slink.arrays import Array
 from slink.stacks import Stack
 from slink.trees import BinaryTree
-from slink.lists import LinkedList, DoublyLinkedList
+from slink.lists import LinkedList, DoublyLinkedList, CircularLinkedList
 from slink.graphs import Graph, GraphNode
 from slink.hash import HashMap, HashTable
 
@@ -50,6 +50,10 @@ def doubly_non_empty_list() -> DoublyLinkedList:
     dlist.insert(3)
     return dlist
 
+@pytest.fixture
+def circular_empty_list() -> CircularLinkedList:
+    return CircularLinkedList()
+
 
 @pytest.fixture
 def simple_hashtable() -> HashTable:
@@ -64,25 +68,25 @@ def base_hashmap() -> HashMap:
 
 
 @pytest.fixture
-def empty_tree_node() -> TreeNode:
-    empty_node = TreeNode(None)
+def empty_tree_node() -> BinaryTreeNode:
+    empty_node = BinaryTreeNode(None)
     return empty_node
 
 
 @pytest.fixture
-def simple_tree_node() -> TreeNode:
-    node = TreeNode(5)
+def simple_tree_node() -> BinaryTreeNode:
+    node = BinaryTreeNode(5)
     return node
 
 
 @pytest.fixture
 def basic_tree() -> BinaryTree:
-    node = TreeNode(1)
-    node.left = TreeNode(2)
-    node.left.left = TreeNode(4)
-    node.right = TreeNode(3)
-    node.right.left = TreeNode(5)
-    node.right.left.left = TreeNode(6)
+    node = BinaryTreeNode(1)
+    node.left = BinaryTreeNode(2)
+    node.left.left = BinaryTreeNode(4)
+    node.right = BinaryTreeNode(3)
+    node.right.left = BinaryTreeNode(5)
+    node.right.left.left = BinaryTreeNode(6)
     tree = BinaryTree(node)
     return tree
 
