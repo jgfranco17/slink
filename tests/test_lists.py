@@ -1,6 +1,6 @@
 import pytest
-from slink.nodes import ListNode
-from slink.lists import LinkedList, DoublyLinkedList
+from slink.nodes import SinglyLinkedNode
+from slink.lists import LinkedList, DoublyLinkedList, CircularLinkedList
 
 
 def test_linked_list_init():
@@ -49,6 +49,8 @@ def test_doubly_linked_list_init():
     dlist = DoublyLinkedList()
     assert dlist.head is None
     assert dlist.tail is None
+    assert dlist.is_empty is True
+    assert str(dlist) == ""
 
 
 def test_doubly_linked_list_len(doubly_empty_list, doubly_non_empty_list):
@@ -84,3 +86,14 @@ def test_doubly_linked_list_insert_at_nth(doubly_empty_list):
 def test_doubly_linked_list_is_empty(doubly_empty_list, doubly_non_empty_list):
     assert doubly_empty_list.is_empty is True
     assert doubly_non_empty_list.is_empty is False
+
+
+def test_circular_linked_list_init(circular_empty_list):
+    assert len(circular_empty_list) == 0
+    assert circular_empty_list.is_empty is True
+
+
+def test_circular_linked_list_methods(circular_empty_list):
+    for invalid_index in (0, -1):
+        with pytest.raises(IndexError):
+            circular_empty_list.delete_nth(invalid_index)

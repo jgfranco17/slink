@@ -1,5 +1,4 @@
 import pytest
-from slink.nodes import TreeNode
 from slink.trees import BinaryTree
 from .conftest import empty_tree_node, simple_tree_node, basic_tree
 
