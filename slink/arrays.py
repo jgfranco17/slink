@@ -7,7 +7,7 @@ class Array:
         self.__data = [None] * size
 
     def __len__(self):
-        return self.__size
+        return sum(1 for item in self.__data if item is not None)
 
     def __getitem__(self, index: int):
         if not 0 <= index < self.__size:
