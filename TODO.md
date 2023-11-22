@@ -2,4 +2,4 @@
 
 Possible improvements for the project
 
-* Inheritance for LL -> DLL classes
+- Inheritance for LL -> DLL classes

@@ -1,14 +1,12 @@
-"""
-Python setup.py for Slink package.
-"""
+"""Python setup.py for Slink package."""
 import io
 import os
+
 from setuptools import find_packages, setup
 
 
 def read(*paths, **kwargs):
-    """Read the contents of a text file safely.
-    """
+    """Read the contents of a text file safely."""
 
     content = ""
     with io.open(
@@ -37,5 +35,5 @@ setup(
     author="jgfranco17",
     packages=find_packages(exclude=["tests", ".github"]),
     install_requires=read_requirements("requirements.txt"),
-    extras_require={"test": read_requirements("requirements-test.txt")}
+    extras_require={"test": read_requirements("requirements-test.txt")},
 )

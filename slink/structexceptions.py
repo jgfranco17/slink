@@ -1,6 +1,6 @@
-"""
-Module for custom excpetions for the different data structures.
-"""
+"""Module for custom exceptions for the different data structures."""
+
+
 class StackOverflowError(BaseException):
     pass
 

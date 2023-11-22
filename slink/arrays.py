@@ -15,7 +15,7 @@ class Array:
 
         return self.__data[index]
 
-    def __setitem__(self, index:int, value: Any):
+    def __setitem__(self, index: int, value: Any):
         if not 0 <= index < self.__size:
             raise IndexError("Index out of range")
 
@@ -25,19 +25,18 @@ class Array:
         return iter(self.__data)
 
     def __repr__(self):
-        return f'<Array at {hex(id(self))}, size={self.__size}'
+        return f"<Array at {hex(id(self))}, size={self.__size}"
 
     def __str__(self) -> str:
         items = " ".join(list(map(str, self.__data)))
-        return f'[{items}]'
+        return f"[{items}]"
 
     @property
     def size(self):
         return len(self)
 
     def resize(self, size: int) -> None:
-        """
-        Change the fixed size of the array.
+        """Change the fixed size of the array.
 
         Args:
             size (int): new size of array
@@ -46,7 +45,7 @@ class Array:
             TypeError: 'size' argument must be an integer
         """
         if not isinstance(size, int):
-            raise TypeError(f'Expected input of type int but got {type(size)}')
+            raise TypeError(f"Expected input of type int but got {type(size)}")
 
         if size < self.__size:
             self.__data = self.__data[:size]
@@ -55,8 +54,7 @@ class Array:
         self.__size = size
 
     def insert(self, index: int, value: Any) -> None:
-        """
-        Insert data into a specified index.
+        """Insert data into a specified index.
 
         Args:
             index (int): array location to insert into
@@ -65,21 +63,20 @@ class Array:
         Raises:
             TypeError: index must be integer
             IndexError: index must be within size
-        """   
+        """
         if not isinstance(index, int):
-            raise TypeError(f'Expected input of type int but got {type(index)}')
+            raise TypeError(f"Expected input of type int but got {type(index)}")
 
         if not 0 <= index <= self.__size:
             raise IndexError("Index out of range")
 
         self.resize(self.__size + 1)
         for i in range(self.__size - 1, index, -1):
-            self.__data[i] = self.__data[i-1]
+            self.__data[i] = self.__data[i - 1]
         self.__data[index] = value
 
     def remove(self, value: Any) -> None:
-        """
-        Remove data from the array.
+        """Remove data from the array.
 
         Args:
             value (Any): data to remove
@@ -90,12 +87,12 @@ class Array:
         for i in range(self.__size):
             if self.__data[i] == value:
                 self.__data[i] = None
-                for j in range(i+1, self.__size):
-                    self.__data[j-1] = self.__data[j]
+                for j in range(i + 1, self.__size):
+                    self.__data[j - 1] = self.__data[j]
                 self.resize(self.__size - 1)
                 return
 
-        raise ValueError(f'{value} not found')
+        raise ValueError(f"{value} not found")
 
     def __partition(self, low: int, high: int) -> int:
         pivot = self[high]
@@ -117,8 +114,7 @@ class Array:
         self.__quicksort(0, len(self) - 1)
 
     def to_list(self) -> list:
-        """
-        Generate a list-format version of the array
+        """Generate a list-format version of the array.
 
         Returns:
             list: list form of array

@@ -2,9 +2,8 @@ from typing import Any
 
 
 class Node:
-    """
-    Base class for node objects.
-    """
+    """Base class for node objects."""
+
     def __init__(self, data: Any):
         self.data = data
 
@@ -22,7 +21,7 @@ class SinglyLinkedNode(Node):
         self.next: SinglyLinkedNode | None = None
 
     def __repr__(self) -> str:
-        return f'<SinglyLinkedNode at {self.address}, data={self.data}, type={type(self.data)}>'
+        return f"<SinglyLinkedNode at {self.address}, data={self.data}, type={type(self.data)}>"
 
 
 class DoublyLinkedNode(Node):
@@ -32,7 +31,7 @@ class DoublyLinkedNode(Node):
         self.previous: DoublyLinkedNode | None = None
 
     def __repr__(self) -> str:
-        return f'<DoublyLinkedNode at {self.address}, data={self.data}, type={type(self.data)}>'
+        return f"<DoublyLinkedNode at {self.address}, data={self.data}, type={type(self.data)}>"
 
 
 class BinaryTreeNode(Node):
@@ -48,10 +47,10 @@ class GraphNode:
         self.neighbors = []
 
     def __repr__(self) -> str:
-        return f'<GraphNode at {self.address}, data={self.data}, type={type(self.data)}>'
+        return (
+            f"<GraphNode at {self.address}, data={self.data}, type={type(self.data)}>"
+        )
 
     def add_neighbor(self, neighbor):
-        """
-        Adds a neighboring node to the node's list of neighbors.
-        """
+        """Adds a neighboring node to the node's list of neighbors."""
         self.neighbors.append(neighbor)

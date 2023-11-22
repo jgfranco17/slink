@@ -1,6 +1,8 @@
 import pytest
+
 from slink.trees import BinaryTree
-from .conftest import empty_tree_node, simple_tree_node, basic_tree
+
+from .conftest import basic_tree, empty_tree_node, simple_tree_node
 
 
 def test_tree_node_init(simple_tree_node):

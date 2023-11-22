@@ -1,6 +1,8 @@
 import pytest
+
 from slink.graphs import Graph, GraphNode
-from .conftest import graph_nodes, graph_edges
+
+from .conftest import graph_edges, graph_nodes
 
 
 def test_add_node(graph_nodes):

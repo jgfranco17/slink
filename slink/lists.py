@@ -1,43 +1,36 @@
-from typing import Any
 from collections.abc import Iterator
-from .nodes import SinglyLinkedNode, DoublyLinkedNode
+from typing import Any
+
+from .nodes import DoublyLinkedNode, SinglyLinkedNode
 
 
 class LinkedList:
-    """
-    A linked list is a data structure that consists of a sequence of nodes,
-    each containing an element and a reference to the next node in the list.
-    """
+    """A linked list is a data structure that consists of a sequence of nodes,
+    each containing an element and a reference to the next node in the list."""
+
     def __init__(self):
         self.head = None
 
     def __iter__(self) -> Any:
-        """
-        For iterators to access and iterate through data inside linked list.
-        """
+        """For iterators to access and iterate through data inside linked
+        list."""
         node = self.head
         while node:
             yield node.data
             node = node.next
 
     def __len__(self) -> int:
-        """
-        Return length of linked list i.e. number of nodes.
-        """
+        """Return length of linked list i.e. number of nodes."""
         return sum(1 for _ in self)
 
     def __repr__(self) -> str:
-        """
-        String representation/visualization of a Linked List.
-        """
+        """String representation/visualization of a Linked List."""
         return " -> ".join([str(item) for item in self])
 
     def __getitem__(self, index: int) -> Any:
-        """
-        Indexing Support, used to get a node at particular position.
-        """
+        """Indexing Support, used to get a node at particular position."""
         if not isinstance(index, int):
-            raise ValueError(f'Index must be int but type {type(index)} was given.')
+            raise ValueError(f"Index must be int but type {type(index)} was given.")
 
         if not 0 <= index < len(self):
             raise IndexError("List index out of range.")
@@ -49,9 +42,7 @@ class LinkedList:
         return None
 
     def __setitem__(self, index: int, data: Any) -> None:
-        """
-        Set the value at a specific index.
-        """
+        """Set the value at a specific index."""
         if not 0 <= index < len(self):
             raise IndexError("List index out of range.")
 
@@ -71,21 +62,15 @@ class LinkedList:
         return is_value_in_list
 
     def add(self, data: Any) -> None:
-        """
-        Append data to the end of linked list.
-        """
+        """Append data to the end of linked list."""
         self.insert_nth(len(self), data)
 
     def insert(self, data: Any) -> None:
-        """
-        Insert data to the beginning of linked list.
-        """
+        """Insert data to the beginning of linked list."""
         self.insert_nth(0, data)
 
     def insert_nth(self, index: int, data: Any) -> None:
-        """
-        Insert data at given index.
-        """
+        """Insert data at given index."""
         if not 0 <= index <= len(self):
             raise IndexError("List index out of range.")
 
@@ -104,27 +89,19 @@ class LinkedList:
             temp.next = new_node
 
     def display(self) -> None:  # print every node data
-        """
-        This method prints every node data.
-        """
+        """This method prints every node data."""
         print(self)
 
     def delete_head(self) -> Any:
-        """
-        Delete the first node and return the node's data.
-        """
+        """Delete the first node and return the node's data."""
         return self.delete_nth(0)
 
     def delete_tail(self) -> Any:  # delete from tail
-        """
-        Delete the tail end node and return the node's data.
-        """
+        """Delete the tail end node and return the node's data."""
         return self.delete_nth(len(self) - 1)
 
     def delete_nth(self, index: int = 0) -> Any:
-        """
-        Delete node at given index and return the node's data.
-        """
+        """Delete node at given index and return the node's data."""
         if not 0 <= index <= len(self) - 1:  # test if index is valid
             raise IndexError("List index out of range.")
 
@@ -142,15 +119,11 @@ class LinkedList:
 
     @property
     def is_empty(self) -> bool:
-        """
-        Check if linked list is empty.
-        """
+        """Check if linked list is empty."""
         return self.head is None
 
     def reverse(self) -> None:
-        """
-        This reverses the linked list order.
-        """
+        """This reverses the linked list order."""
         prev = None
         current = self.head
 

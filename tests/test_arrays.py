@@ -1,5 +1,7 @@
 import pytest
+
 from slink.arrays import Array
+
 from .conftest import empty_array, simple_array
 
 
@@ -63,12 +65,12 @@ def test_array_iteration():
 
 def test_array_invalid_resize(empty_array):
     with pytest.raises(TypeError):
-        empty_array.resize('invalid_input')
+        empty_array.resize("invalid_input")
 
 
 def test_array_invalid_insert(simple_array):
     with pytest.raises(TypeError):
-        simple_array.insert('invalid_index', 5)
+        simple_array.insert("invalid_index", 5)
     with pytest.raises(IndexError):
         simple_array.insert(-1, 5)
     with pytest.raises(IndexError):

@@ -1,6 +1,7 @@
 import pytest
+
+from slink.lists import CircularLinkedList, DoublyLinkedList, LinkedList
 from slink.nodes import SinglyLinkedNode
-from slink.lists import LinkedList, DoublyLinkedList, CircularLinkedList
 
 
 def test_linked_list_init():

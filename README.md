@@ -12,10 +12,11 @@
 ---
 
 ## Table of Contents
-* [About](#about)
-* [Prerequisites](#prerequisites)
-* [Usage](#usage)
-* [Authors](#authors)
+
+- [About](#about)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [Authors](#authors)
 
 ## About <a name="about"></a>
 
@@ -26,6 +27,7 @@ Slink is a Python package library for [classic data structures](https://www.geek
 We welcome contributions from the open source community. If you find a bug or have a feature request, please open an issue on the GitHub repository. If you'd like to contribute code, please fork the repository and submit a [pull request](.github/PULL_REQUEST_TEMPLATE.md) with your changes. Slink follows the Python Software Foundation's [code of conduct](https://www.python.org/psf/conduct/) and encourages contributions from all members of the community. Before contributing, please review the contribution guidelines and code of conduct to ensure that your contributions are in line with our standards and values.
 
 ## Prerequisites <a name="prerequisites"></a>
+
 The following must be installed on the host machine:
 
 - [Python 3.9](https://github.com/pyenv/pyenv) or above
@@ -100,7 +102,7 @@ This will run the specified test module and generates a detailed result report i
 
 Running these unittests is necessary to ensure that the code is functioning as expected and meeting the requirements of the design specification. The unittests are designed to test each function and method of the code and to identify any errors or unexpected behavior. By testing the code using these PyTest unittests, we can ensure that the code meets the specified requirements and that any changes made to the code do not introduce new bugs or errors.
 
-In addition, these tests can be automated to run on every code change, allowing us to quickly identify any issues that may arise and enabling us to maintain a high level of code quality. 
+In addition, these tests can be automated to run on every code change, allowing us to quickly identify any issues that may arise and enabling us to maintain a high level of code quality.
 
 In essence, running these PyTest unittests is a critical part of the software QA process and helps to ensure that our code is robust, reliable, and meets the needs of our end-users before the product hits deployment.
 

@@ -1,6 +1,8 @@
 import pytest
+
 from slink.stacks import Stack
 from slink.structexceptions import StackOverflowError, StackUnderflowError
+
 from .conftest import base_stack
 
 

@@ -1,11 +1,12 @@
 import pytest
-from slink.nodes import BinaryTreeNode
+
 from slink.arrays import Array
-from slink.stacks import Stack
-from slink.trees import BinaryTree
-from slink.lists import LinkedList, DoublyLinkedList, CircularLinkedList
 from slink.graphs import Graph, GraphNode
 from slink.hash import HashMap, HashTable
+from slink.lists import CircularLinkedList, DoublyLinkedList, LinkedList
+from slink.nodes import BinaryTreeNode
+from slink.stacks import Stack
+from slink.trees import BinaryTree
 
 
 @pytest.fixture
@@ -38,7 +39,7 @@ def non_empty_list() -> LinkedList:
 
 
 @pytest.fixture
-def doubly_empty_list() -> DoublyLinkedList: 
+def doubly_empty_list() -> DoublyLinkedList:
     return DoublyLinkedList()
 
 
@@ -49,6 +50,7 @@ def doubly_non_empty_list() -> DoublyLinkedList:
     dlist.insert(2)
     dlist.insert(3)
     return dlist
+
 
 @pytest.fixture
 def circular_empty_list() -> CircularLinkedList:

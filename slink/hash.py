@@ -1,4 +1,4 @@
-from typing import Optional, Any
+from typing import Any, Optional
 
 
 class HashMap:
@@ -26,7 +26,7 @@ class HashMap:
             if k == key:
                 return v
 
-        raise KeyError(f'No item with key \"{key}\" in map.')
+        raise KeyError(f'No item with key "{key}" in map.')
 
     def __setitem__(self, key: Any, value: Any):
         index = self.__hash(key) % self.__capacity
@@ -50,7 +50,7 @@ class HashMap:
                 self.__size -= 1
                 return
 
-        raise KeyError(f'Failed to delete, \"{key}\" not found.')
+        raise KeyError(f'Failed to delete, "{key}" not found.')
 
     def __len__(self):
         return self.__size

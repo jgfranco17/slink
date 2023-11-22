@@ -5,6 +5,7 @@ project_template welcomes contributions from the community.
 **You need PYTHON3!**
 
 This instructions are for linux base systems. (Linux, MacOS, BSD, etc.)
+
 ## Setting up your own fork of this repo
 
 - On github interface click on `Fork` button.
@@ -23,7 +24,7 @@ Run `make install` to install the project in develop mode, then run `make test` 
 
 ### Create a new branch to work on your contribution
 
-Checkout ths branch by running the following command.
+Checkout this branch by running the following command.
 
 ```bash
 git checkout -b <branch_name>
@@ -37,7 +38,7 @@ Edit the files using your preferred editor (we recommend VIM or VSCode). Save an
 
 ## Pre-commit checks
 
-This project strives to follow PEP8 guidelines. Use `black` as a formatter for ease of formatting. 
+This project strives to follow PEP8 guidelines. Use `black` as a formatter for ease of formatting.
 
 For convenience, the following Makefile commands may come in handy.
 

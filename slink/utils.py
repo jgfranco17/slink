@@ -1,18 +1,14 @@
-"""
-Helper module for miscellaneous calculations.
-"""
+"""Helper module for miscellaneous calculations."""
 
 import math
 
 
 def is_prime(number: int) -> bool:
-    """
-    Checks to see if a number is a prime in O(sqrt(n)).
-    """
+    """Checks to see if a number is a prime in O(sqrt(n))."""
 
     # precondition
     if not (isinstance(number, int) and (number >= 0)):
-        raise ValueError("Value of \'number\' must been an int and positive")
+        raise ValueError("Value of 'number' must been an int and positive")
 
     if 1 < number < 4:
         # 2 and 3 are primes
